@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Adding an event listener</title>
+		<style>
+		</style>
+	</head>
+	<body>
+
+		<h1>Boring webpage</h1>
+
+		<button id="clicker">Boring button</button>
+
+		<script>
+		  // 1. Find and store the element we want to listen to events on.
+		  let clickerButton = document.getElementById("clicker");
+		  // 2. Define the function that will respond to the event.
+		  //Callback function
+		   let onButtonClick = function() {
+		   	clickerButton.textContent = "You clikcked the Auto Destruct Sequence. This computer will detonate in 5 minutes.";
+		   };
+		  // 3. Add the event listener for the element and function
+			 clickerButton.addEventListener("click",onButtonClick);
+		//	alternatively could have put an anonlymous function (inline nad without name). The previous onButtonClick function would be unnecessary with the following anonymous function:
+		//Named functions can be called agian and some developers find them easier to debug.
+		  /*clickerButton.addEventListener("click",function() {
+			clickerButton.textContent="The Nostromo will self destruct in t-minus 10 minutes."
+		});*/
+		</script>
+	</body>
+</html>

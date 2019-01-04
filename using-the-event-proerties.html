@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Using the event properties</title>
+		<style>
+			.beard {
+				background: black;
+				width: 5px;
+				height: 5px;
+				position: absolute;
+				border-radius: 2px;
+				top: 80px;
+				left: 15px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<img id="face" src="https://www.kasandbox.org/programming-images/creatures/Winston.png">
+		<div id="message"></div>
+		<script>
+		  // 1. Find and store the element we want to listen to events on.
+		  let face = document.getElementById("face");
+		  // 2. Define the function that will respond to the event.
+		  let onMouseMove = function(e) {
+		  	console.log(e);
+			  document.getElementById("message").textContent += "mooove";
+		  var beard = document.createElement("div");
+		  beard.className = "beard";
+		  document.body.appendChild(beard);
+		  beard.style.top = e.clientY + "px";
+		  beard.style.left = e.clientX + "px";
+		  };
+		  // 3. Add the event listener for the element and function
+		  face.addEventListener("mousemove", onMouseMove);
+		//   4.
+		//	e is the event information object. The browser sends it as the first argument when it does an event call back function. Don't have to call it e(typically also called event or evt), as long as it's referring to the first argument to your function.
+		</script>
+	</body>
+</html>
