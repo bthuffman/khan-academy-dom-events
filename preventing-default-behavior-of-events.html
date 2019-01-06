@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Preventing default behavior of events</title>
+	</head>
+	<body>
+
+		<a id="ohnoes" href="https://www.kasandbox.org/programming-sounds/rpg/giant-no.mp3">What does Oh Noes say?</a>
+
+		<script>
+		  // Step 1: Find the element we want the event on
+		  let ohNoesEl = document.getElementById("onnoes");
+		  // Step 2: Define the event listener function
+		  let onClickOhNoes = function (e){
+		  	//prevent clicking from opening the mp3 on a new webpage.
+		  	e.preventDefault();
+		  	//create audio
+		  	let audioEl = document.createElement("audio");
+		  	//set the source
+		  	audioEl.src = "https://www.kasandbox.org/programming-sounds/rpg/giant-no.mp3";
+		  	//set it to autoplay
+		  	audioEl.autoplay = "true";
+		  	//and add it to the page
+		  	document.body.appendChild(audioEl);
+		  };
+		  // Step 3: Attach event listener to element
+			ohNoesEl.addEventListener("click", onClickOhNoes);
+		</script>
+	</body>
+</html>
